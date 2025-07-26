@@ -2,7 +2,7 @@ import { ShardingManager } from 'discord.js';
 import { config } from 'dotenv';
 import { _meinu_log } from './logging';
 
-config();
+config({ quiet: true });
 
 export class MeinuSharding {
 	#_manager: ShardingManager;
