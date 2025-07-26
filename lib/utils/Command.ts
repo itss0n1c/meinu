@@ -157,9 +157,9 @@ export class Command<Inst = Meinu> {
 	#_numSort = (a: number, b: number) => a - b;
 
 	get global(): boolean {
-		if (ApplicationIntegrationType.UserInstall in this.integration_types) return true;
-		if (InteractionContextType.BotDM in this.contexts) return true;
-		if (InteractionContextType.PrivateChannel in this.contexts) return true;
+		if (this.integration_types.includes(ApplicationIntegrationType.UserInstall)) return true;
+		if (this.contexts.includes(InteractionContextType.BotDM)) return true;
+		if (this.contexts.includes(InteractionContextType.PrivateChannel)) return true;
 		return false;
 	}
 
